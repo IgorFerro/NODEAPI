@@ -1,7 +1,12 @@
-const fs =  require('fs')
+const fs =  require('fs');
+const http = require('http')
 
+
+/////////////////////////////////////////////////////////////////////////////
+//////FILES
 //Blocking, synchronous eaw
 //Reading Files
+/*
 const textIn = fs.readFileSync('.//1-node-farm//starter//txt//input.txt', 'utf-8');
 console.log(textIn);
 
@@ -26,3 +31,34 @@ fs.readFile('.//1-node-farm//starter//txt//start.txt', 'utf-8', (err, data1) => 
 });
 });
 console.log('Will read file');
+*/
+
+///////////////////////////////////////////////////////////
+///////SERVER
+ const server = http.createServer((req, res)=>{
+    res.end('Hello from the server!');
+});
+
+server.listen(8000, '127.0.0.1', () =>{
+    console.log('Listening to request on port 8000');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
