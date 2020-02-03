@@ -16,7 +16,7 @@ app.post('/', (req,res)=>{
 })*/
 //Read the file
 const tours =JSON.parse(fs.readFileSync(`${__dirname}/dev-data/data/tours.json`));
-console.log(req.params);
+//console.log(req.params);
 
 app.get('/api/v1/tours', (req,res) =>{
   res.status(200).json({
@@ -28,7 +28,7 @@ app.get('/api/v1/tours', (req,res) =>{
   })
 });
 
-//Search by id
+//Search by id for 01 tour
 app.get('/api/v1/tours/:id', (req,res) =>{
     console.log(req.params);
     const id = req.params.id * 1;
@@ -60,7 +60,7 @@ app.post('/api/v1/tours', (req,res)=>{
     tours.push(newTour);
 
     fs.writeFile(`${__dirname}/dev-data/data/tours-simple.json`,JSON.stringify(tours), err =>{
-    res.status(201),json({
+    res.status(201).json({
         status: 'sucess',
         data:{
             tour: newTour
@@ -68,8 +68,6 @@ app.post('/api/v1/tours', (req,res)=>{
     })
   });
 })
-
-
 
 const port = 3001;
 app.listen(port, () => {
