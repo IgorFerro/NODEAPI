@@ -170,12 +170,12 @@ tourRouter
 .patch(updateTour)
 .delete(deleteTour);
 
-app
+userRouter
 .route('/')
 .get(getAllUsers)
 .post(createUser);
 
-app
+userRouter
 .route('/:id')
 .get(getUser)
 .patch(updateUser)
