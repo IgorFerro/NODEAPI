@@ -12,4 +12,5 @@ Node.js, Express, MongoDB &amp; More: The Complete Bootcamp 2020
 7. Refector the routes
 8. Applying middlewares
 9. install morgan: npm i morgan (request logger middleware)
+10. Define the User router on 3-Routes then create they functions on 2- routes handlers
 
