@@ -8,4 +8,8 @@ Node.js, Express, MongoDB &amp; More: The Complete Bootcamp 2020
 3. Create the app.js file
 4. Setting up Express and Basic Routing
 5. Read the file tours.json an create the get route
+6. Create the Post,Patch and Delete routes
+7. Refector the routes
+8. Applying middlewares
+9. install morgan: npm i morgan (request logger middleware)
 
