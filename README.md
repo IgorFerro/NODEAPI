@@ -14,4 +14,7 @@ Node.js, Express, MongoDB &amp; More: The Complete Bootcamp 2020
 9. install morgan: npm i morgan (request logger middleware)
 10. Define the User router on 3-Routes then create they functions on 2- routes handlers
 11. Separating the routes Users and Tours
+12. Create Route Folder
+13. Controller Folder
+14. Create server file
 
