@@ -9,8 +9,9 @@ const app = express();
 
 //1-MIDDLEWARES
 app.use(morgan('dev'));
-
 app.use(express.json());
+//Midleware for read the static file
+app.use(express.static(`${__dirname}/public`))
 
 //Middleware function
 app.use((req, res,next)=>{
@@ -24,10 +25,7 @@ app.use((req, res, next)=>{
     next();
 })
 
-//2- ROUTE HANDLERS
-
-
-//3- ROUTES
+//2- ROUTES
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
