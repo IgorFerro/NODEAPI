@@ -19,4 +19,6 @@ Node.js, Express, MongoDB &amp; More: The Complete Bootcamp 2020
 14. Create server file
 15. Create param Middleware for get by id on user route
 16. Create param Middleware for 404 not found on tour route and remove the repeated code
+17. Create param Middleware for check values price and name (Post tour route)
+
 
