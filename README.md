@@ -17,4 +17,6 @@ Node.js, Express, MongoDB &amp; More: The Complete Bootcamp 2020
 12. Create Route Folder
 13. Controller Folder
 14. Create server file
+15. Create param Middleware for get by id on user route
+16. Create param Middleware for 404 not found on tour route and remove the repeated code
 
