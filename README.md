@@ -21,5 +21,6 @@ Node.js, Express, MongoDB &amp; More: The Complete Bootcamp 2020
 16. Create param Middleware for 404 not found on tour route and remove the repeated code
 17. Create param Middleware for check values price and name (Post tour route)
 18. Create a Middleware for read static files
-19. Crate the config file and npm i dotenv
+19. Create the config file and npm i dotenv
+20. Install eslint and prettier plugins and dependencies: npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --save-dev
 
