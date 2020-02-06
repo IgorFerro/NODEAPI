@@ -21,4 +21,5 @@ Node.js, Express, MongoDB &amp; More: The Complete Bootcamp 2020
 16. Create param Middleware for 404 not found on tour route and remove the repeated code
 17. Create param Middleware for check values price and name (Post tour route)
 18. Create a Middleware for read static files
+19. Crate the config file and npm i dotenv
 

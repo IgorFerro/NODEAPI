@@ -8,7 +8,10 @@ const userRouter = require('./routes/userRoutes');
 const app = express();
 
 //1-MIDDLEWARES
-app.use(morgan('dev'));
+if (process.env.NODE_EVN === 'development'){
+    app.use(morgan('dev'));}
+
+
 app.use(express.json());
 //Midleware for read the static file
 app.use(express.static(`${__dirname}/public`))
