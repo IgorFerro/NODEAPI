@@ -4,7 +4,7 @@
   "description": "Learning node, express and mongoDB",
   "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon server.js",
+    "start": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js"
   },
   "repository": {
@@ -19,7 +19,9 @@
   "homepage": "https://github.com/IgorFerro/NODEAPI#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "eslint-plugin-disable": "^1.0.5",
     "express": "^4.17.1",
+    "mongoose": "^5.8.11",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2"
   },

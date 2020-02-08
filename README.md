@@ -2,7 +2,7 @@
 Node.js, Express, MongoDB &amp; More: The Complete Bootcamp 2020
 
 
-# Steps 1
+# Firsts Steps Building API
 1. Create json file: npm init
 2. Install express: npm i express@4 
 3. Create the app.js file
@@ -23,4 +23,32 @@ Node.js, Express, MongoDB &amp; More: The Complete Bootcamp 2020
 18. Create a Middleware for read static files
 19. Create the config file and npm i dotenv
 20. Install eslint and prettier plugins and dependencies: npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --save-dev
+
+# Mongo DB
+mongo db
+
+1. use natours-test
+2. db.tours.insertOne({ name: "The Forest Hiker", price: 297, rating: 4.7 })
+3. db.tours.find()
+4. show dbs
+5. show collections
+6. quit()
+------------------------------------------------------------
+Querying (Reading)
+1. db.tours.insertMany([{name: "The Sea Explorer", price: 497, rating:4.8}, {name: "The Snow Adventurer", price: 997, rating: 4.9, difficulty: "easy"}])
+2. db.tours.find({ price: {$lte: 500}})
+3. db.tours.find({price: {$lt:500}, rating: {$gte: 4.8} })
+4. db.tours.find({ $or: [{price: {$lt: 500}}, {rating: {$gte: 4.8}} ]})
+------------------------------------------------------------
+Updating Documents
+
+1. db.tours.updateOne({name: "The Snow Adventurer"}, {$set: {price: 597} })
+2. db.tours.updateMany({ price: {$gt: 500}, rating: {$gte: 4.8}}, { $set: {premium: true}})
+-----------------------------------------------------------
+Delete Documents
+1. db.tours.deleteMany({ rating: {$lt: 4.8}})
+2. db.tours.deleteMany({})
+
+# Mongo DB With Mongoose
+1.npm i mongoose@5
 
