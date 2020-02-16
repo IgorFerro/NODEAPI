@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Tour = require('./../../models/tourModel');
 
-
 dotenv.config({ path: './config.env' });
 
 const DB = process.env.DATABASE.replace('<PASSWORD>',process.env.DATABASE_PASSWORD);
@@ -16,14 +15,8 @@ mongoose.connect(DB, {
 })
 .then(() =>console.log('DB connection sucessfull'))
 
-//START SERVER
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
-  console.log(`App running on port ${port}...`);
-});
-
 //READ THE JSON FILE
-const tours = JSON.parse(fs.readFileSync(`${__dirname}tours-simple-.json`,'uft-8'));
+const tours = JSON.parse(fs.readFileSync(`${__dirname}\\tours-simple.json`,'utf-8'));
 
 //IMPORT DA INTO DB
 const importData  = async () =>{
