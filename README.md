@@ -50,5 +50,8 @@ Delete Documents
 2. db.tours.deleteMany({})
 
 # Mongo DB With Mongoose
-1.npm i mongoose@5
+1. npm i mongoose@5
+
+# Install Validator
+1. npm i validator
 
