@@ -13,7 +13,7 @@ if (process.env.NODE_EVN === 'development'){
 
 app.use(express.json());
 //Midleware for read the static file
-app.use(express.static(`${__dirname}/public`))
+app.use(express.static('C://Node-Api-2//NODEAPI//public'))
 
 //Middleware function
 app.use((req, res,next)=>{

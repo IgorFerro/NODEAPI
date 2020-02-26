@@ -9,8 +9,6 @@ exports.aliasTopTours = (req, res , next) =>{
 
 };
 
-
-
 //Get All Tours
 exports.getAllTours = async (req,res) =>{
     try{
@@ -58,21 +56,26 @@ exports.getAllTours = async (req,res) =>{
   };
    //Create Tour
   exports.createTour = async (req,res) => {
-  try{
-  const newTour = await Tour.create(req.body);
-  res.status(201).json({
-      status: 'success',
-      data:{
+    try {
+        const newTour = await new Tour({})
+        newTour.save()
+  
+      //const newTour = await Tour.create(req.body);
+  
+      res.status(201).json({
+        status: 'success',
+        data: {
           tour: newTour
-      }
-  });
- }catch(err){
-     res.status(400).json({
-         status: 'fail',
-         message: 'Invalid data sent!'
-        })
+        }
+      });
+      console.log(newTour)
+    } catch (err) {
+      res.status(400).json({
+        status: 'fail',
+        message: 'Invalid data send!'
+      });
     }
-      };
+  };
 
 //Update Tours
 exports.updateTour = async (req , res) => {
@@ -92,7 +95,7 @@ exports.updateTour = async (req , res) => {
     res.status(404).json({
         status:'fail',
         message: err 
-    })
+    });
 }
 };
 //Delete Tour
@@ -108,7 +111,7 @@ exports.deleteTour= async (req , res) => {
         res.status(404).json({
             status:'fail',
             message: err 
-        })
+        });
        }
 };
 
@@ -151,7 +154,7 @@ exports.getTourStats = async (req, res) => {
     }
   };
 
-  exports.getMonthlyPlan = async(req,res) =>{
+  exports.getMonthlyPlan  = async(req,res) =>{
     try {
       const year =req.params.year * 1;
       const plan = await Tour.aggregate([
@@ -201,6 +204,5 @@ exports.getTourStats = async (req, res) => {
         status: 'fail',
         message: err
       });
-      
     }
   };
