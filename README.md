@@ -61,3 +61,6 @@ Delete Documents
 # Instal bcryptjs
 1. npm i bcryptjs
 
+# Install Jsonwebtoken
+1. npm i jsonwebtoken
+
