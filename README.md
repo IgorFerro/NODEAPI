@@ -58,3 +58,6 @@ Delete Documents
 # Install ndb
 1. npm i ndb
 
+# Instal bcryptjs
+1. npm i bcryptjs
+
