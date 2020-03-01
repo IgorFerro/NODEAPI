@@ -52,3 +52,24 @@ res.status(200).json({
     token
  });
 });
+
+exports.protect =catchAsync(async(req,res,next) => {
+    // 1- Getting token and check of it's there
+    let token;
+    if (req.headers.authorizathion && req.headers.authorizathion.startsWith('Bearer')){
+     token = req.headers.authorizathion.slipt(' ')[1]; 
+    }
+    //console.log(token);
+
+    if(!token) {
+        return next(new AppError('You are not logged in! Please log in to get acess.', 401));
+    }
+
+    //2- Verification token
+
+    //3- Check if user still exists
+
+    //4- Check if user changed password after the token was issued
+
+    next();
+});
