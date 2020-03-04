@@ -64,3 +64,6 @@ Delete Documents
 # Install Jsonwebtoken
 1. npm i jsonwebtoken
 
+# Install Nodemailer
+1. npm i nodemailer
+
