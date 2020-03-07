@@ -67,3 +67,6 @@ Delete Documents
 # Install Nodemailer
 1. npm i nodemailer
 
+# Install Express Rate Limit
+1. npm i express-rate-limit
+
