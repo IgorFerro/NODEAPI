@@ -76,5 +76,6 @@ Delete Documents
 # Install Express Mongo Sanitize and XSS Clean
 1. npm i express-mongo-sanitize
 2. npm i xss-clean
+3. npm i hpp
 
 
