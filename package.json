@@ -25,6 +25,7 @@
     "eslint-plugin-disable": "^1.0.5",
     "express": "^4.17.1",
     "express-rate-limit": "^5.1.1",
+    "helmet": "^3.21.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.11",
     "morgan": "^1.9.1",
