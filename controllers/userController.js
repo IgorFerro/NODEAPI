@@ -9,9 +9,6 @@ const filterObj = (obj, ...allowedFields) => {
    })
    return newObj;
 }
-
-
-
 //Routs Handlers
 exports.getAllUsers = catchAsync(async(req,res,next) => {
   
@@ -53,6 +50,15 @@ exports.updateMe  = catchAsync(async(req, res, next) =>{
        user: updateUser
      }
    });
+});
+
+exports.deleteMe =catchAsync(async(req, res,next)=> {
+  await User.findByIdAndUpdate(req.user.id, {active:false});
+
+  res.status(204).json({
+    status: 'sucess',
+    data:null
+  });
 });
 
 exports.getUser = (req,res) => {
