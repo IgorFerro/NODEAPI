@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
 const validator = require('validator');
+const User = require('./userModel');
 
 //Create Schema
 const tourSchema = new mongoose.Schema({
@@ -100,7 +101,8 @@ createAt: {
        description: String,
        day:Number
      }
-   ] 
+   ],
+   guides:  Array
   },
 {
   toJSON: {virtuals:true},
@@ -118,12 +120,20 @@ createAt: {
   next();
   });
 
+  tourSchema.pre('save' , async function(next){
+    const guidesPromises = this.guides.map(async id=> await User.findById(id));
+    this.guides =await Promise.all(guidesPromises);
+    next();
+  });
+
   //MONGOOSE QUERY MIDDLEWARE
   tourSchema.pre(/^find/, function(next){
     this.find({secretTour: {$ne: true}})
     this.start =Date.now();
     next();
   });
+
+
 
   tourSchema.post(/^find/, function(docs,next){
     console.log(`Query took ${Date.now() - this.start} millesenconds `)
