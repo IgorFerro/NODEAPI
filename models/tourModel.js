@@ -138,6 +138,15 @@ createAt: {
     next();
   });
 
+  tourSchema.pre(/^find/, function(next){
+    this.populated({
+      path: 'guides',
+      select: '-__v -passwordChangedAt'
+ 
+   });
+   
+    next();
+  });
 
 
   tourSchema.post(/^find/, function(docs,next){
