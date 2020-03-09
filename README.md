@@ -78,4 +78,8 @@ Delete Documents
 2. npm i xss-clean
 3. npm i hpp
 
+# Delete and Import Data node 
+1. ./dev-data/data/import-dev-data.js --delete
+2. node ./dev-data/data/import-dev-data.js --import
+
 
