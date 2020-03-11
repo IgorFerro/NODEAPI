@@ -13,6 +13,10 @@ const filterObj = (obj, ...allowedFields) => {
 }
 //Routs Handlers
 
+exports.getMe =(req, res, next) => {
+  req.params.id = req.user.id;
+  next();
+}
 
 exports.createUser = (req,res) => {
     res.status(500).json({
