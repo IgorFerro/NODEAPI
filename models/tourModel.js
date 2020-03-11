@@ -146,7 +146,7 @@ createAt: {
   });
 
   tourSchema.pre(/^find/, function(next){
-    this.populated({
+    this.populate({
       path: 'guides',
       select: '-__v -passwordChangedAt'
  

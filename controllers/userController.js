@@ -12,23 +12,12 @@ const filterObj = (obj, ...allowedFields) => {
    return newObj;
 }
 //Routs Handlers
-exports.getAllUsers = catchAsync(async(req,res,next) => {
-  
-  const users = await User.find();
 
-  res.status(200).json({
-      status:'sucess',
-      results: this.getAllUsers.length,
-      data:{
-        users
-      }
-    });
-});
 
 exports.createUser = (req,res) => {
     res.status(500).json({
       status:'error',
-      message: 'This route is no yet defined!'  
+      message: 'This route is not defined! Please use/signup instead'  
     });
 };
 
@@ -63,14 +52,9 @@ exports.deleteMe =catchAsync(async(req, res,next)=> {
   });
 });
 
-exports.getUser = (req,res) => {
-    res.status(500).json({
-      status:'error',
-      message: 'This route is no yet defined!'  
-    });
-};
-
+// Get All Users
+exports.getAllUsers = factory.getAll(User);
+exports.getUser = factory.getOne(User);
 //Do no update passwords with this
 exports.updateUser = factory.updateOne(User);
-
 exports.deleteUser = factory.deleteOne(User);
