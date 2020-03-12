@@ -50,7 +50,7 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-userSchema.pre('save', async function(next) {
+/*userSchema.pre('save', async function(next) {
     // Only run this function if password was actually modified
     if(!this.isModified('password')) return next();
     //Encrypt the password
@@ -65,7 +65,7 @@ userSchema.pre('save', function(next){
 
   this.passwordChangeAt = Date.now() -1000;
   next();
-});
+});*/
  
 //Query Middleware
 userSchema.pre(/^find/, function(next){
