@@ -55,18 +55,36 @@ const reviewSchema = new mongoose.Schema(
      }
      ]);
      console.log(stats);
-      
+
+      if(stats.length > 0){
      await Tour.findByIdAndUpdate(tourId, {
          ratingsQuantity: stats[0].nRating,
          ratingsAverage: stats[0].avgRating
-     })
-
+     });
+    } else {
+        await Tour.findByIdAndUpdate(tourId, {
+        ratingsQuantity: 0,
+        ratingsAverage: 4.5
+    });
+}
    };
 
-   reviewSchema.pre('save',function(){
+   reviewSchema.post('save',function(){
      // this points to current review
      this.constructor.calcAverageRatings(this.tour)
    });
+
+   //Calculating Average Rating on Tours - Part 2
+   reviewSchema.pre(/^findOneAnd/, async function(next){
+       this.r= await this.findOne();
+       console.log(this.r)
+       next();
+   })
+
+   reviewSchema.post(/^findOneAnd/, async function(next){
+       //await this.findOne(); does NOT work here,  query has already executed
+       await this.r.constructor.calcAverageRatings(this.r.tour);
+   })
 
     const Review = mongoose.model('Review', reviewSchema);
 
