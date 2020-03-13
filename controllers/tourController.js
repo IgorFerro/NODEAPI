@@ -21,7 +21,7 @@ exports.updateTour = factory.updateOne(Tour);
 //Delete Tour
 exports.deleteTour = factory.deleteOne(Tour);
 
-
+//Agregation Pipeline
 exports.getTourStats = catchAsync(async (req, res, next) => {
       const stats = await Tour.aggregate([
         {
