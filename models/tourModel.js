@@ -170,11 +170,11 @@ createAt: {
   })
 
   //MONGOOSE AGGREGATION MIDDLEWARE
-  tourSchema.pre('aggregate',function(next){
+ /* tourSchema.pre('aggregate',function(next){
     this.pipeline().unshift({$match:{secretTour:{$ne: true }}})
     console.log(this.pipeline)
     next();
-  })
+  })*/
 
 
 
