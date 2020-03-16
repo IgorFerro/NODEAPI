@@ -82,4 +82,7 @@ Delete Documents
 1. node ./dev-data/data/import-dev-data.js --delete
 2. node ./dev-data/data/import-dev-data.js --import
 
+# Install Pug
+1. npm i pug
+
 
