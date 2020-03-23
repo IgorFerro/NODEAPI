@@ -23,6 +23,7 @@ const tour = await (await Tour.findOne({slug: req.params.slug})).populated({
 // 3- Render template using data from 1-
 
   res.status(200).render('tour', {
-    title: 'The Forest Hiker Tour'
+    title: `${tour.name} Tour`,
+    tour
   });
 });
