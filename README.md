@@ -85,4 +85,6 @@ Delete Documents
 # Install Pug
 1. npm i pug
 
+# Install npm i cookie-parser
+1. npm i cookie-parser
 
