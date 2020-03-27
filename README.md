@@ -88,3 +88,12 @@ Delete Documents
 # Install npm i cookie-parser
 1. npm i cookie-parser
 
+# Install Parcel
+1. npm i parcel-bundler
+
+# Install Axios
+1. npm i axios
+
+# Install babel polyfill
+1. npm i @babel/polyfill
+
