@@ -1,5 +1,6 @@
 const Tour =  require('../models/tourModel');
 const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
 
 exports.getOverview =catchAsync(async(req, res) =>{
  // 1- Get tour data from collection
@@ -19,6 +20,12 @@ const tour = await (await Tour.findOne({slug: req.params.slug})).populated({
   path: 'reviews',
   fields: 'review rating user'
 });
+
+/*if(!tour){
+  return next(new AppError('There is no tour with that name.', 404)); 
+}*/
+
+
 // 2- Build template
 // 3- Render template using data from 1-
 
